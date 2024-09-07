@@ -4,6 +4,7 @@ from sqlalchemy.exc import SQLAlchemyError
 from ws_models import Base,engine # Assuming this is where your models are defined
 from common.config_and_logger import config, logger_db_manager
 import shutil
+import os
 
 def drop_and_create_database(engine, database_name):
     logger_db_manager.info(f'- in drop_and_create_database -')
@@ -17,7 +18,8 @@ def drop_and_create_database(engine, database_name):
 
 def delete_database_helper_dataframe_files():
     logger_db_manager.info(f'- in delete_database_helper_dataframe_files -')
-    shutil.rmtree(config.DATAFRAME_FILES_DIR)
+    if os.path.exists(config.DATAFRAME_FILES_DIR):
+        shutil.rmtree(config.DATAFRAME_FILES_DIR)
 
 
 def create_tables( database_name):
