@@ -18,8 +18,10 @@ def drop_and_create_database(engine, database_name):
 
 def delete_database_helper_dataframe_files():
     logger_db_manager.info(f'- in delete_database_helper_dataframe_files -')
-    if os.path.exists(config.DATAFRAME_FILES_DIR):
-        shutil.rmtree(config.DATAFRAME_FILES_DIR)
+    if os.path.exists(config.DATABASE_HELPER_FILES):
+        shutil.rmtree(config.DATABASE_HELPER_FILES)
+    if os.path.exists(config.WS_IOS_HELPER_FILES):
+        shutil.rmtree(config.WS_IOS_HELPER_FILES)
 
 
 def create_tables( database_name):

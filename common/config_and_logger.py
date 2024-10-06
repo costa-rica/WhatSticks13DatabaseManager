@@ -29,7 +29,7 @@ if not os.path.exists(config.PROJECT_RESOURCES):
     os.makedirs(config.PROJECT_RESOURCES)
 
 #where do we store logging information
-file_handler = RotatingFileHandler(os.path.join(config.PROJECT_RESOURCES,'database_manger.log'), mode='a', maxBytes=5*1024*1024,backupCount=2)
+file_handler = RotatingFileHandler(os.path.join(config.PROJECT_RESOURCES,'logs','database_manger.log'), mode='a', maxBytes=5*1024*1024,backupCount=2)
 file_handler.setFormatter(formatter)
 
 #where the stream_handler will print
