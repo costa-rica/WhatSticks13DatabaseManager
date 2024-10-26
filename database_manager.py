@@ -1,11 +1,10 @@
 import sqlalchemy
 from sqlalchemy import create_engine, text
 from sqlalchemy.exc import SQLAlchemyError
-from ws_models import Base,engine, sessionmaker # Assuming this is where your models are defined
 from common.config_and_logger import config, logger_db_manager
 import shutil
 import os
-from ws_models import engine, DatabaseSession, text, Users
+from ws_models import engine, sessionmaker , DatabaseSession, text, Users
 import bcrypt
 
 salt = bcrypt.gensalt()
