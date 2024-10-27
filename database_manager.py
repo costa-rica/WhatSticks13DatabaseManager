@@ -4,7 +4,7 @@ from sqlalchemy.exc import SQLAlchemyError
 from common.config_and_logger import config, logger_db_manager
 import shutil
 import os
-from ws_models import engine, sessionmaker , DatabaseSession, text, Users
+from ws_models import Base, engine, sessionmaker , DatabaseSession, text, Users
 import bcrypt
 
 salt = bcrypt.gensalt()
